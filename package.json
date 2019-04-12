@@ -1,0 +1,23 @@
+{
+  "name": "wfa-npm-test",
+  "version": "1.0.0",
+  "description": "npm-test",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lalala2012/npm-test.git"
+  },
+  "keywords": [
+    "npm",
+    "test"
+  ],
+  "author": "wfa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lalala2012/npm-test/issues"
+  },
+  "homepage": "https://github.com/lalala2012/npm-test#readme"
+}
