@@ -4,12 +4,9 @@
   "description": "npm-test",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -p",
+    "dev": "node --experimental-modules src/index.mjs",
     "build": "babel src -d lib",
-    "build:map": "babel src -d lib -s && node tool/index && webpack -p",
-    "build:webpack": "node tool/index && webpack -p",
-    "test:run:file": "babel-node src/index.js",
-    "test:api:transform": "babel-node test/index.js"
+    "build:map": "babel src -d lib -s"
   },
   "repository": {
     "type": "git",

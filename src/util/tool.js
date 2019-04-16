@@ -1,2 +1,1 @@
-const test = 2;
-exports.test1 = test;
+export var test = 1;
