@@ -1,5 +1,2 @@
-import { test } from "./src";
-// test.then(value => {
-//   console.log(value);
-// })
-export default test
+const { test } = require("./src/index");
+exports.test = test;

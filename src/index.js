@@ -1,4 +1,4 @@
-import "babel-polyfill"
-export const test = new Promise((resolve, reject) => {
+require("babel-polyfill")
+exports.test = new Promise((resolve, reject) => {
   resolve(1)
 })
