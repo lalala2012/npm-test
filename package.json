@@ -1,6 +1,6 @@
 {
   "name": "wfa-npm-test",
-  "version": "4.0.5",
+  "version": "4.0.6",
   "description": "npm-test",
   "main": "./src/components/index.js",
   "scripts": {
