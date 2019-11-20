@@ -2,7 +2,7 @@
   "name": "wfa-npm-test",
   "version": "4.0.3",
   "description": "npm-test",
-  "main": "./src/index.js",
+  "main": "./src/components/index.js",
   "scripts": {
     "test": "npm run dev",
     "build": "babel src -d lib",
