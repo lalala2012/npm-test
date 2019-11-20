@@ -1,12 +1,12 @@
 <template>
-  <div
+  <el-button
     @click="start"
     :disabled="disabledStatus"
     type="primary"
     :round="type === 'round'"
     :circle="type === 'circle'"
     :plain="type === 'plain'"
-    >{{ downtimeText }}</div
+    >{{ downtimeText }}</el-button
   >
 </template>
 <script>
