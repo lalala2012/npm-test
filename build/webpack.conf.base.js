@@ -17,11 +17,14 @@ module.exports = {
   output: {
     // path: path.resolve(__dirname, 'dist',),
     // 文件之间支持使用../ 返回上一级
-    path: path.resolve(__dirname, '../dist'),
+    // path: path.resolve(__dirname, '../dist'),
     // 当前绝对路径
-    filename: 'bundle.js'
+    // filename: 'bundle.js'
     // 配置输出文件
     // 这里配置好了不用在命令行再写输入输出名
+    // 输出设定根路径
+    path: __dirname,
+    filename: '[name].js',
   },
   module: {
     rules: [
