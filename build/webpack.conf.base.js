@@ -11,7 +11,8 @@ module.exports = {
   // 下面几个配合着用
   // 设定入口的绝对路径
   context: path.resolve(__dirname, '../'),
-  entry: './src/index.js',
+  // entry: './src/index.js',
+  entry: './src/components/index.js',
   // entry: './build/entryTest/main.js',
   // 配置输入文件
   output: {
@@ -23,7 +24,8 @@ module.exports = {
     // 配置输出文件
     // 这里配置好了不用在命令行再写输入输出名
     // 输出设定根路径
-    path: __dirname,
+    path: path.resolve(__dirname, './dist'),
+    // filename: '[name][hash].js',
     filename: '[name].js',
   },
   module: {
