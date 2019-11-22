@@ -7,12 +7,12 @@ module.exports = {
   // entry: path.resolve(__dirname, '../build/entryTest/main.js'),
   // entry: path.resolve(__dirname, '.entryTest/main.js'),
   // 有无后缀都行，之人文件名，后面loader在自行过滤
-  // entry: path.resolve(__dirname, '../src/ma2in.js'),
+  // entry: path.resolve(__dirname, '../src/index.js'),
   // 下面几个配合着用
   // 设定入口的绝对路径
   context: path.resolve(__dirname, '../'),
-  // entry: './src/index.js',
-  entry: './build/entryTest/main.js',
+  entry: './src/index.js',
+  // entry: './build/entryTest/main.js',
   // 配置输入文件
   output: {
     // path: path.resolve(__dirname, 'dist',),
@@ -33,7 +33,7 @@ module.exports = {
           resolve('test'),
           resolve('node_modules/webpack-dev-server/client'),
         ],
-      }
+      },
     ],
   },
 };
