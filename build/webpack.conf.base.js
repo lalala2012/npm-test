@@ -10,9 +10,10 @@ module.exports = {
   // 设定入口的绝对路径
   context: path.resolve(__dirname, '../'),
   // entry: './src/index.js',
-  // entry: './src/components/index.js',
-  entry: './build/entryTest/main.js',
+  entry: './src/components/index.js',
+  // entry: './build/entryTest/main.js',
   // entry: './src/components/downtime/index.vue',
+  // entry: './src/components/test/index.vue',
   // 配置输入文件
   output: {
     // path: path.resolve(__dirname, 'dist',),
@@ -25,12 +26,19 @@ module.exports = {
     // 输出设定根路径
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].js',
+    libraryTarget: 'umd',
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
+            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
+          }
+        }
       },
       // 它会应用到普通的 `.js` 文件
       // 以及 `.vue` 文件中的 `<script>` 块
