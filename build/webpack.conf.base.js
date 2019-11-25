@@ -1,7 +1,5 @@
 const path = require('path');
-function resolve(dir) {
-  return path.join(__dirname, '..', dir);
-}
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
   // 文件只能一个个导入，最好有一个入口文件
   // entry: path.resolve(__dirname, '../build/entryTest/main.js'),
@@ -12,8 +10,9 @@ module.exports = {
   // 设定入口的绝对路径
   context: path.resolve(__dirname, '../'),
   // entry: './src/index.js',
-  entry: './src/components/index.js',
-  // entry: './build/entryTest/main.js',
+  // entry: './src/components/index.js',
+  entry: './build/entryTest/main.js',
+  // entry: './src/components/downtime/index.vue',
   // 配置输入文件
   output: {
     // path: path.resolve(__dirname, 'dist',),
@@ -24,21 +23,34 @@ module.exports = {
     // 配置输出文件
     // 这里配置好了不用在命令行再写输入输出名
     // 输出设定根路径
-    path: path.resolve(__dirname, './dist'),
-    // filename: '[name][hash].js',
+    path: path.resolve(__dirname, '../dist'),
     filename: '[name].js',
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        include: [
-          resolve('src'),
-          resolve('test'),
-          resolve('node_modules/webpack-dev-server/client'),
-        ],
+        test: /\.vue$/,
+        loader: 'vue-loader'
       },
+      // 它会应用到普通的 `.js` 文件
+      // 以及 `.vue` 文件中的 `<script>` 块
+      {
+        test: /\.js$/,
+        loader: 'babel-loader'
+      },
+      // 它会应用到普通的 `.css` 文件
+      // 以及 `.vue` 文件中的 `<style>` 块
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
+      }
     ],
   },
+  plugins: [
+    // 请确保引入这个插件！
+    new VueLoaderPlugin()
+  ]
 };
