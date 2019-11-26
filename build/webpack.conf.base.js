@@ -9,7 +9,23 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].js',
-    libraryTarget: 'global',
+    // 静态资源变量名
+    library: 'someLibName',
+    // libraryTarget: 'window',
+    // libraryTarget: 'this',
+    // 这个指向的是window?
+    // libraryTarget: 'global',
+    // libraryTarget: 'amd',
+    // 单个对象导出
+    // libraryTarget: 'commonjs',
+    // 整个对象导出
+    // libraryTarget: 'commonjs2',
+    // libraryTarget: 'jsonp',
+    // webpack打包成umd最后面的window编写错误 应该换成this
+    libraryTarget: 'umd',
+    // 没有cmd？
+    // libraryTarget: 'cmd',
+    auxiliaryComment: 'Test Comment'
   },
   module: {
     rules: [
