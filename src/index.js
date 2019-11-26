@@ -1,1 +1,5 @@
-console.log('test');
+export default {
+  test: function () {
+    console.log('test');
+  }
+}
