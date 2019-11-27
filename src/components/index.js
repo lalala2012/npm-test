@@ -1,4 +1,5 @@
 import test from './test/index.vue';
+// const test = require('./test/index.vue')
 
 const domComponents = [
   test,
@@ -16,3 +17,7 @@ export default {
   install,
   test
 };
+// module.exports = {
+//   install,
+//   test
+// }

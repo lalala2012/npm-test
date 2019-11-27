@@ -24,9 +24,13 @@ module.exports = {
     // 配置输出文件
     // 这里配置好了不用在命令行再写输入输出名
     // 输出设定根路径
+    library: 'someLibName',
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].js',
-    libraryTarget: 'umd',
+    // libraryTarget: 'umd',
+    // libraryTarget: 'this',
+    // libraryTarget: 'commonjs',
+    libraryTarget: 'commonjs2',
   },
   module: {
     rules: [
