@@ -1,6 +1,7 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
+  mode: 'production',
   // 文件只能一个个导入，最好有一个入口文件
   // entry: path.resolve(__dirname, '../build/entryTest/main.js'),
   // entry: path.resolve(__dirname, '.entryTest/main.js'),
@@ -54,9 +55,25 @@ module.exports = {
           'css-loader'
         ]
       },
-      {// 添加这个json，解决如上的报错问题
+      {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac|ogv)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: path.posix.join('static', 'media/[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: path.posix.join('static', 'img/[name].[hash:7].[ext]') 
+        }
       },
     ],
   },
