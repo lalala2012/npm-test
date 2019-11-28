@@ -27,22 +27,17 @@ module.exports = {
     library: 'someLibName',
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].js',
-    // libraryTarget: 'umd',
+    libraryTarget: 'umd',
     // libraryTarget: 'this',
     // libraryTarget: 'commonjs',
-    libraryTarget: 'commonjs2',
+    // libraryTarget: 'commonjs2',
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {
-          loaders: {
-            scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
-            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
-          }
-        }
+        options: {}
       },
       // 它会应用到普通的 `.js` 文件
       // 以及 `.vue` 文件中的 `<script>` 块
@@ -58,7 +53,11 @@ module.exports = {
           'vue-style-loader',
           'css-loader'
         ]
-      }
+      },
+      {// 添加这个json，解决如上的报错问题
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      },
     ],
   },
   plugins: [

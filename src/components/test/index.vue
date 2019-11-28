@@ -3,10 +3,10 @@
 </template>
 <script>
 export default {
-  name: 'test',
+  name: "test"
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 .lalala {
   color: red;
 }
