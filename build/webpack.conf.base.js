@@ -25,7 +25,8 @@ module.exports = {
     // libraryTarget: 'umd',
     // 没有cmd？
     // libraryTarget: 'cmd',
-    auxiliaryComment: 'Test Comment'
+    auxiliaryComment: 'Test Comment',
+    globalObject: 'this'
   },
   module: {
     rules: [
