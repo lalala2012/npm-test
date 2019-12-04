@@ -12,7 +12,7 @@ module.exports = {
     // 静态资源变量名
     library: 'someLibName',
     // libraryTarget: 'window',
-    libraryTarget: 'this',
+    // libraryTarget: 'this',
     // 这个指向的是window?
     // libraryTarget: 'global',
     // libraryTarget: 'amd',
@@ -22,11 +22,12 @@ module.exports = {
     // libraryTarget: 'commonjs2',
     // libraryTarget: 'jsonp',
     // webpack打包成umd最后面的window编写错误 应该换成this
-    // libraryTarget: 'umd',
+    libraryTarget: 'umd',
     // 没有cmd？
     // libraryTarget: 'cmd',
     auxiliaryComment: 'Test Comment',
     globalObject: 'this'
+    // globalObject: 'global'
   },
   module: {
     rules: [
